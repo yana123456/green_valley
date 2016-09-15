@@ -1,0 +1,14 @@
+// Для импорта в диспетчер подключений: @import './src/blocks/main-logo/main-logo.less';
+
+@import '../../less/variables.less';     // только для удобства обращения к переменным
+
+
+.main-logo {
+  line-height: 0;
+  font-size: 0;
+  text-align: center;
+
+  @media (min-width: @screen-lg) {
+    text-align: left;
+  }
+}

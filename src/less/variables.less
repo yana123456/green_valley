@@ -1,0 +1,102 @@
+// Базовые цвета
+
+@gray-darker:                 #191919;
+@gray-dark:                   #4c4c4c;
+@gray:                        #979696;
+@gray-light:                  #ebebeb;
+@gray-lighter:                #fafafa;
+
+@color-main--green:           #0ab89d;
+@color-main--green-hover:     #079b84;
+@color-main--orange:          #ff7435;
+@color-main--orange--hover:   #e85715;
+@color-main:                  @color-main--green;
+@color-review:                #fff;
+
+@color-success:               #5cb85c;
+@color-danger:                #d9534f;
+
+
+
+// Семантические цвета
+
+@text-color:                  @gray-darker;
+@text-color--muted:           @gray;
+@body-bg:                     #fff;
+
+@link-color:                  @color-main;
+@link-color--hover:           @color-main--green;
+
+@border-color:                @gray-light;
+
+
+
+// Базовая типографика (<=479: 1 rem = 8px, >=480: 1rem = 10px)
+// Для лёгкого пересчёта: http://pxtoem.com/
+
+@font-size:                   1.6rem;
+@font-size--h1:               2.250em; // 3.6rem;
+@font-size--h2:               1.875em; // 3rem;
+@font-size--h3:               1.500em; // 2.4rem;
+@font-size--h4:               1.250em; // 2.0rem;
+@font-size--h5:               1em;     // 1.6rem
+@font-size--h6:               1em;     // 1.6rem
+@font-size--small:            0.75em;
+@font-size--small-percent:    75%;
+
+@line-height:                 1.375em;
+
+@font-family:                 -apple-system, BlinkMacSystemFont, 'Roboto', 'Ubuntu', 'Droid Sans', 'Helvetica Neue', Arial, sans-serif;
+@font-family--serif:          "PTSerif", Georgia, 'Times New Roman', Times, serif;
+@font-family--fira:           "FiraSans", sans-serif;
+@font-family--sans-cap:       "PTSansCaption", sans-serif;
+@font-family--serif-cap:      "PTSerifCaption", sans-serif;
+@font-family--monospace:      Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+@font-family--headings:       @font-family;
+
+
+
+// Модульная сетка
+
+@grid-columns:                12;
+@grid-gutter-width:           2rem;
+
+
+
+// Ширины
+
+@screen-xs:                   0;
+@screen-sm:                   480px;
+@screen-md:                   768px;
+@screen-lg:                   992px;
+@screen-xl:                   1200px;
+@screen-xxl:                  1800px;
+
+@container-sm:                100%;
+@container-md:                100%;
+@container-lg:                @screen-lg;
+@container-xl:                @screen-xl;
+@container-xxl:               @screen-xxl;
+
+
+
+// Z-index
+
+@z-index-dropdown:            10;
+
+
+
+// Формы, кнопки
+
+@field-padding-top:           0.313em;
+@field-padding-bottom:        0.313em;
+@field-padding-horizontal:    0.438em;
+
+
+
+// Разное
+
+@border-radius:               .3rem;       // универсальное сглаживание углов бордюра
+@opacity:                     .7;          // универсальная прозрачность
+@transition-time:             .3s;         // время плавных переходов
+@shadow:                      0 4px 2px -2px rgba(0,0,0,0.3);         // универсальная тень

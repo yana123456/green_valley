@@ -1,0 +1,43 @@
+// Для импорта в диспетчер подключений: @import './src/blocks/place/place.less';
+
+@import '../../less/variables.less';     // только для удобства обращения к переменным
+
+
+.place {
+  display: none;
+  padding-bottom: 47px;
+  background-color: #fff;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &__img {
+    line-height: 0;
+    font-size: 0;
+  }
+
+  &__title {
+    margin: 32px 0 10px;
+    font: 26px/1 @font-family--serif;
+    color: @gray-darker;
+    text-align: center;
+  }
+
+  &__description {
+    margin: 0;
+    font: 500 14px/1 @font-family--fira;
+    color: @gray-darker;
+    text-align: center;
+    text-transform: uppercase;
+
+    &--bold {
+      font-size: 18px;
+      color: @color-main--orange;
+    }
+  }
+
+  &--active {
+    display: block;
+  }
+}

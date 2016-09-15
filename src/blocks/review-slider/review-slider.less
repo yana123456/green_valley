@@ -1,0 +1,86 @@
+// Для импорта в диспетчер подключений: @import './src/blocks/review/review.less';
+
+@import '../../less/variables.less';     // только для удобства обращения к переменным
+
+
+.review-slider {
+
+  &__item {
+    position: relative;
+    flex-wrap: wrap;
+    display: none;
+    justify-content: center;
+    margin-top: 50px;
+    padding: 118px 40px 24px;
+    background-color: @color-review;
+    font-family: @font-family--fira;
+    font-weight: 400;
+    color: @gray-darker;
+    text-align: center;
+    border: 1px solid @color-main--green-hover;
+
+    &--active {
+      display: flex;
+    }
+
+    @media (min-width: @screen-md){
+      padding-bottom: 25px;
+    }
+
+    @media (min-width: @screen-lg) {
+      display: flex;
+      margin-top: 44px;
+    }
+  }
+
+  &__user {
+    z-index: 100000;
+    position: absolute;
+    margin: 0;
+    left: 50%;
+    top: -25px;
+    transform: translate(-50%, 0);
+    font-family: inherit;
+  }
+
+  &__img {
+    display: block;
+    margin: 0 auto;
+    width: 82px !important;
+    border: 2px solid @color-review;
+  }
+
+  &__name {
+    margin: 12px 0 7px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.2857;
+    letter-spacing: 0.5px
+  }
+
+  &__link {
+    &:hover {
+      text-decoration: none;
+    }
+
+    @media (min-width: @screen-lg) {
+      .icon {
+        font-size: 18px;
+      }
+    }
+  }
+
+  &__message {
+    margin: 0 0 14px;
+    font-size: 16px;
+    line-height: 1.375;
+    color:  #000;
+  }
+
+  &__date {
+    align-self: flex-end;
+    font-size: 14px;
+    line-height: 1.2857;
+    letter-spacing: 0.7px;
+  }
+}

@@ -1,0 +1,68 @@
+// Для импорта в диспетчер подключений: @import './src/blocks/page-header/page-header.less';
+
+@import '../../less/variables.less';     // только для удобства обращения к переменным
+
+
+.page-header {
+  border-bottom: 1px solid @gray-light;
+
+  &__inner {
+    .container();
+  }
+
+  &__items {
+    position: relative;
+    .row(@xs-grid-gutter: 0;
+         @sm-grid-gutter: 0;
+         @md-grid-gutter: 0);
+    align-items: center;
+  }
+
+  &__main-logo {
+    margin: 0 50px;
+    padding-top: 16px;
+    padding-bottom: 25px;
+    .col(lg, 2);
+
+    @media (min-width: @screen-lg) {
+      margin: 0;
+    }
+  }
+
+  &__main-nav {
+    .col-offset(lg, 1);
+    .col-offset(xl, 0);
+    .col(lg, 5);
+    .col(xl, 4);
+  }
+
+  &__contact {
+    .col-offset(xl);
+    .col(xl, 3);
+    .hidden-down(lg);
+    font: 14px/1 @font-family--fira;
+    color: @gray-darker;
+    letter-spacing: 0.5px;
+  }
+
+  &__phone {
+    display: block;
+    margin: 8px 0 12px;
+    font: 18px/1 @font-family--sans-cap;
+    color: @gray-darker;
+
+    &:hover {
+      color: @color-main--green-hover;
+      text-decoration: none;
+    }
+  }
+
+  &__btn {
+    .col-offset(lg, 2);
+    .col-offset(xl, 0);
+    .col(lg, 2);
+    .hidden-down(md);
+
+    .btn--icon:before {font-size: 14px;}
+  }
+}

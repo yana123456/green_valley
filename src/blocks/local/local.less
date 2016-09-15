@@ -1,0 +1,54 @@
+// Для импорта в диспетчер подключений: @import './src/blocks/local/local.less';
+
+@import '../../less/variables.less';     // только для удобства обращения к переменным
+
+
+.local {
+
+  &__inner {
+    .container(0);
+  }
+
+  &__wrapper {
+    margin-bottom: 52px;
+    .row(0, 0, 0);
+
+    @media (min-width: @screen-md) {
+      margin-bottom: 41px;
+    }
+
+    @media (min-width: @screen-lg) {
+      margin-bottom: 62px;
+    }
+  }
+
+  &__title {
+    letter-spacing: 2.5px;
+    margin: 58px 50px 34px;
+    font: 26px/1.2 @font-family--serif;
+    text-align: center;
+    color: @gray-darker;
+
+    @media (min-width: @screen-md) {
+      margin-top: 34px;
+      font-size: 30px;
+    }
+
+    @media (min-width: @screen-lg) {
+      margin-top: 93px;
+    }
+  }
+
+  &__map {
+    width: 100%;
+    min-height: 400px;
+  }
+
+  &__traffic {
+    .col(lg, 5);
+
+    &--offset {
+      .col-offset(lg);
+    }
+  }
+}

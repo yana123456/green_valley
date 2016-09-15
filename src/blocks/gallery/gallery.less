@@ -1,0 +1,20 @@
+// Для импорта в диспетчер подключений: @import './src/blocks/gallery/gallery.less';
+
+@import '../../less/variables.less';     // только для удобства обращения к переменным
+
+.gallery {
+
+  &__inner {
+    .container(0);
+    padding-bottom: 50px;
+    cursor: pointer;
+
+    @media (min-width: @screen-md) {
+      padding-bottom: 49px;
+    }
+
+    @media (min-width: @screen-lg) {
+      padding-bottom: 39px;
+    }
+  }
+}

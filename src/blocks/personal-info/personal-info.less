@@ -1,0 +1,85 @@
+// Для импорта в диспетчер подключений: @import './src/blocks/personal-info/personal-info.less';
+
+@import '../../less/variables.less';     // только для удобства обращения к переменным
+
+
+.personal-info {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+
+  &__item {
+    position: relative;
+    display: block;
+    margin-bottom: 20px;
+
+    &--last {
+      margin-bottom: 0;
+    }
+
+    @media (min-width: @screen-md) {
+      flex: 0 0 48.7637%;
+      width: 48.7637%;
+    }
+  }
+
+  &__form {
+    width: 100%;
+    padding: 10px 0;
+    font: 14px/1 @font-family--fira;
+    color: @gray-darker;
+    text-align: center;
+    text-transform: uppercase;
+    border: 1px solid @gray-light;
+
+    &:active,
+    &:focus {
+      outline: 0;
+      border: 1px solid @gray;
+    }
+
+    &:-moz-placeholder {
+      color: @gray;
+    }
+
+    &:-ms-input-placeholder {
+      color: @gray;
+    }
+
+    &::-webkit-input-placeholder {
+      color: @gray;
+    }
+
+    &::-moz-placeholder {
+      color: @gray;
+    }
+
+  }
+
+  &__icon {
+    display: none;
+    position: absolute;
+    color: @color-main--green;
+    font-size: 18px;
+    left: 20px;
+    top: 11px;
+
+    &--cancel {
+      color: red;
+    }
+  }
+
+  &__hint {
+    margin: 8px 0 0;
+    font: 14px/1.28571428 @font-family--fira;
+    color: @gray-dark;
+    line-height: 18px;
+    text-align: left;
+  }
+
+  @media (min-width: @screen-md) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+}

@@ -1,0 +1,62 @@
+// Для импорта в диспетчер подключений: @import './src/blocks/result/result.less';
+
+@import '../../less/variables.less';     // только для удобства обращения к переменным
+
+
+.result {
+  padding: 24px 40px;
+  background-color: #fff;
+
+  &__title {
+    margin: 0;
+    font: 14px/1 @font-family--fira;
+    color: @gray-dark;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &__price {
+    margin: 10px 0;
+    font: 500 24px/1 @font-family--fira;
+    color: @gray-darker;
+    text-align: center;
+  }
+
+  &__help {
+    //display: none;
+    font: 14px/1.35714 @font-family--fira;
+    color: @gray-dark;
+  }
+
+  &__link {
+    display: inline-block;
+    position: relative;
+    font: 14px/1.35714 @font-family--fira;
+    color: @gray-dark;
+
+    &:hover,
+    &:hover:after,
+    &:focus,
+    &:active {
+      border-color: @color-main--green-hover;
+      color: @color-main--green-hover;
+      text-decoration: none;
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      width: 100%;
+      position: absolute;
+      bottom: 1px;
+      left: 0;
+      border-bottom: 1px dashed #000;
+    }
+  }
+
+  &__icon {
+    color: #e71717;
+    font-size: 14px;
+  }
+  
+}

@@ -1,0 +1,80 @@
+// Для импорта в диспетчер подключений: @import './src/blocks/page-footer/page-footer.less';
+
+@import '../../less/variables.less';     // только для удобства обращения к переменным
+
+
+.page-footer {
+  border-top: 1px solid @gray-light;
+
+  &__inner {
+    .container();
+  }
+
+  &__items {
+    .row(0, 0);
+    align-items: center;
+    padding: 25px 0;
+  }
+
+  &__address {
+    .hidden-down(sm);
+    .col(md, 3);
+
+    font: 14px/1.285714 @font-family--fira;
+    color: @gray-darker;
+    text-align: left;
+  }
+
+  &__link {
+    .col(md, 6);
+    text-align: center;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+  }
+
+  &__icon {
+    display: block;
+    padding: 7px 17px 0;
+    font-size: 23px !important;
+
+    &:hover {
+      text-decoration: none;
+
+      &:before {
+        color: @color-main--green-hover !important;
+      }
+    }
+
+    &:before {
+      color: @color-main--green !important;
+    }
+  }
+
+  &__contact {
+    .hidden-down(sm);
+    .col(md, 3);
+    .col(lg, 2);
+    .col-offset(lg, 1);
+
+    font: 14px/1.285714 @font-family--fira;
+    text-align: left;
+  }
+
+  &__phone,
+  &__mail {
+    color: @gray-darker;
+    padding-left: 40px;
+
+    &:hover {
+      color: @color-main--green-hover;
+      text-decoration: none;
+    }
+  }
+
+}

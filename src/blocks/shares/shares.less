@@ -1,0 +1,27 @@
+// Для импорта в диспетчер подключений: @import './src/blocks/shares/shares.less';
+
+@import '../../less/variables.less';     // только для удобства обращения к переменным
+
+
+.shares {
+
+  &__inner {
+    .container(0);
+  }
+
+  &__title {
+    margin: 43px 45px 34px;
+    font: 26px/1.2 @font-family--serif-cap;
+    color:  #000;
+    text-align: center;
+    letter-spacing: 0.8px;
+
+    @media (min-width: @screen-md) {
+      letter-spacing: 2px;
+    }
+
+    @media (min-width: @screen-lg) {
+      margin-top: 49px;
+    }
+  }
+}

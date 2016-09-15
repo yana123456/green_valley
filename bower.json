@@ -1,0 +1,17 @@
+{
+  "name": "Green_Valley_Project",
+  "description": "Green_Valley_Project",
+  "main": "",
+  "authors": [
+    " "
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+    "owl.carousel": "^2.1.6",
+    "pickadate": "^3.5.6",
+    "magnific-popup": "^1.1.0",
+    "picturefill": "^3.0.2"
+  }
+}

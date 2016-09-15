@@ -1,0 +1,231 @@
+// Для импорта в диспетчер подключений: @import './src/blocks/payment/payment.less';
+
+@import '../../less/variables.less';     // только для удобства обращения к переменным
+
+
+.payment {
+  display: block;
+  position: relative;
+  padding: 20px 40px 20px;
+  cursor: pointer;
+  background-color: #fff;
+
+  &__name {
+    padding-left: 36px;
+    font: 500 14px/1 @font-family--fira;
+    color: @gray-dark;
+    text-align: center;
+    text-transform: uppercase;
+
+    @media (min-width: @screen-md) {
+      flex-basis: 142px;
+      width: 142px;
+      text-align: left;
+    }
+  }
+
+  &__hint {
+    .hidden-down(sm);
+
+    font: 14px/1.28571 @font-family--fira;
+    color: @gray-dark;
+
+    @media (min-width: @screen-md) {
+      flex-basis: 280px;
+      width: 280px;
+    }
+  }
+
+  &__tab {
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    color: @gray-light;
+    font-size: 18px;
+    opacity: 0;
+    transition: all 0.5s ease;
+
+    &--active {
+      color: @color-main--green;
+      opacity: 1;
+    }
+
+    @media (min-width: @screen-md) {
+      left: 20px;
+      top: 18px;
+    }
+  }
+
+  &__radio {
+    display: none;
+  }
+
+  &__description {
+    display: block;
+    margin: 14px 0 8px;
+    font: 14px @font-family--fira;
+    color: @gray-dark;
+    text-align: left;
+    text-transform: uppercase;
+  }
+
+  &__form {
+    display: block;
+    width: 100%;
+    padding: 14px 0;
+    color: @gray-darker;
+    text-align: center;
+    text-transform: uppercase;
+    border: 1px solid @gray-light;
+
+    &:active,
+    &:focus {
+      outline: 0;
+      border: 1px solid @gray;
+    }
+
+    &:-moz-placeholder {
+      color: @gray;
+    }
+
+    &:-ms-input-placeholder {
+      color: @gray;
+    }
+
+    &::-webkit-input-placeholder {
+      color: @gray;
+    }
+
+    &::-moz-placeholder {
+      color: @gray;
+    }
+
+    &--small {
+      width: 136px;
+      padding-left: 20px;
+    }
+
+  }
+
+  &__icon {
+    display: none;
+    position: absolute;
+    color: @color-main--green;
+    font-size: 18px;
+    left: 20px;
+    top: 43px;
+
+    &--cancel {
+      color: red;
+    }
+  }
+
+
+  &__bank-card-wrapper {
+
+    @media (min-width: @screen-md) {
+      flex-basis: 260px;
+      width: 260px;
+
+      &--small {
+        flex-basis: 155px;
+        width: 155px;
+        margin-left: 20px;
+      }
+    }
+  }
+
+  &__bank-card {
+    display: block;
+    position: relative;
+  }
+
+  &__wrapper {
+    @media (min-width: @screen-md) {
+      display: flex;
+    }
+  }
+
+  @media (min-width: @screen-md) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+}
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.animated.infinite {
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+.animated.hinge {
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+}
+
+
+@-webkit-keyframes tada {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  10%, 20% {
+    -webkit-transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+  }
+
+  30%, 50%, 70%, 90% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+
+  40%, 60%, 80% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes tada {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  10%, 20% {
+    -webkit-transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+  }
+
+  30%, 50%, 70%, 90% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+
+  40%, 60%, 80% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.tada {
+  -webkit-animation-name: tada;
+  animation-name: tada;
+}

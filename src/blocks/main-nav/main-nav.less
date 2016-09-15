@@ -1,0 +1,51 @@
+// Для импорта в диспетчер подключений: @import './src/blocks/main-nav/main-nav.less';
+
+@import '../../less/variables.less';     // только для удобства обращения к переменным
+
+
+.main-nav {
+  font: 500 14px @font-family--fira;
+
+  &__list {
+    .hidden-down(md);
+    padding: 0;
+    margin: 0 -2.5rem;
+    list-style: none;
+
+    @media (min-width: @screen-lg) {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -1rem;
+      border-bottom-color: transparent;
+    }
+  }
+
+  &__item {
+    display: block;
+  }
+
+  &__link {
+    display: block;
+    padding: 2rem 0.9rem;
+    color: @gray-darker;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    border-top: 1px solid @gray-light;
+    cursor: pointer;
+
+    &:hover, &:focus {
+      color: @color-main--orange;
+      text-decoration: none;
+    }
+
+    @media (min-width: @screen-lg) {
+      display: flex;
+      flex-wrap: wrap;
+      padding-top: 0.9rem;
+      padding-bottom: 0.9rem;
+      border-top-color: transparent;
+      letter-spacing: 0.5px;
+    }
+  }
+}

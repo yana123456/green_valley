@@ -1,0 +1,99 @@
+// Для импорта в диспетчер подключений: @import './src/blocks/vacation-type/vacation-type.less';
+
+@import '../../less/variables.less';     // только для удобства обращения к переменным
+
+
+.vacation-type {
+  .container(0);
+
+  &__inner {
+    .row(0, 0, 0);
+  }
+
+  &__slide {
+    .col(xl, 8);
+    .col-offset(xl, 2);
+    min-height: 345px;
+    padding-top: 49px;
+    padding-bottom: 49px;
+    background: url(../img/entertainment-sm-1.jpg) top center no-repeat;
+    background-size: cover;
+
+    @media (min-width: @screen-md) {
+      background-image: url(../img/entertainment-bg-1.jpg);
+      background-size: contain;
+      padding-bottom: 43px;
+    }
+
+    @media (min-width: @screen-xl) {
+      padding: 49px 0 84px;
+    }
+  }
+
+  &__title {
+    margin: 0 0 32px;
+    padding: 0 80px;
+    font: 26px/1.2 @font-family--serif-cap;
+    color: #000;
+    text-align: center;
+    letter-spacing: 1.4px;
+
+    @media (min-width: @screen-md) {
+      letter-spacing: 2px;
+    }
+
+    @media (min-width: @screen-lg) {
+      font-size: 30px;
+      margin-bottom: 25px;
+    }
+  }
+
+  &__description {
+    margin: 0 0 9px;
+    padding: 0 30px;
+    font: 16px/1.375 @font-family--fira;
+    color: #000;
+    text-align: center;
+
+    @media (min-width: @screen-md) {
+      padding: 0 70px;
+      letter-spacing: 0.5px;
+    }
+  }
+
+  &__list {
+    .hidden-down(sm);
+    .row(0, 0, 0, 0, 0, 0);
+    margin: 0;
+    justify-content: center;
+    padding: 0 70px;
+    list-style: none;
+
+    @media (min-width: @screen-lg) {
+      margin-left: -1rem;
+      margin-right: -1rem;
+      padding: 0;
+      justify-content: space-between;
+    }
+  }
+
+  &__item {
+    .col(md, 1, 4, 2rem);
+    .col(lg, 1, 6, 2rem);
+    margin: 24px 0 0 0;
+    font: 500 14px/1.28571 @font-family--fira;
+    color: @gray-darker;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 0.5px;
+  }
+
+  &__img {
+    display: block;
+    margin: 0 auto 14px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+  }
+  
+}

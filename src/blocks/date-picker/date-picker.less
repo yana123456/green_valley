@@ -1,0 +1,70 @@
+// Для импорта в диспетчер подключений: @import './src/blocks/date-picker/date-picker.less';
+
+@import '../../less/variables.less';     // только для удобства обращения к переменным
+
+
+.date-picker {
+  position: relative;
+  margin-bottom: 34px;
+
+  &__tip {
+    display: none;
+  }
+
+  &__header {
+    margin-bottom: 11px;
+    font: 14px @font-family--fira;
+    color: @gray-dark;
+    letter-spacing: 0.7px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &__date {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__item {
+    padding: 12px;
+    width: 55px;
+    height: 50px;
+    font: 500 14px @font-family--fira;
+    color: @color-main--green;
+    border: 1px solid @gray-light;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    @media (min-width: @screen-lg) {
+      padding: 8px 8px;
+      width: 40px;
+      height: 27px;
+    }
+
+    &--big {
+      width: 70px;
+
+      @media (min-width: @screen-lg) {
+        width: 53px;
+      }
+    }
+
+    &:focus {
+      outline: 0;
+    }
+
+    & ~ & {
+      margin-left: -1px;
+    }
+  }
+
+  @media (min-width: @screen-lg) {
+    padding: 29px 0 54px;
+  }
+}
+
+
+#date-picker__arrive-day {
+  position: relative;
+}

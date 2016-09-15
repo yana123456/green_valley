@@ -1,0 +1,78 @@
+// Для импорта в диспетчер подключений: @import './src/blocks/promo-slider/promo-slider.less';
+
+@import '../../less/variables.less';     // только для удобства обращения к переменным
+
+
+.promo-slider {
+  display: flex;
+  flex-wrap: wrap;
+
+  & > * {
+    width: 100%;
+  }
+
+  &__tabs {
+    order: 1;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 12px 2.5rem 4px;
+    list-style: none;
+
+    @media (min-width: @screen-sm) {
+      justify-content: center;
+    }
+
+    @media (min-width: @screen-lg) {
+      padding: 33px 1rem 27px;
+    }
+  }
+
+  &__tab {
+    transition: all 0.4s ease;
+
+    &--active {
+      &:after {
+        content: '';
+        display: block;
+        margin: 0 auto;
+        background-color: @color-main--orange;
+        width: 30px;
+        height: 2px;
+      }
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: 7px 0;
+    font: 14px/1 @font-family--fira;
+    color: #838383;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    letter-spacing: 1.2px;
+    transition: all 0.4s ease;
+
+    &:hover,
+    &:focus,
+    &--hover,
+    &--focus {
+      color: @color-main--orange;
+      text-decoration: none;
+    }
+
+    &--active,
+    &:active {
+      color: @color-main--orange;
+    }
+
+    @media (min-width: @screen-sm) {
+      padding: 7px 17px;
+    }
+  }
+
+  &__vacation-type {
+    order: 2;
+  }
+}

@@ -1,0 +1,50 @@
+// Для импорта в диспетчер подключений: @import './src/blocks/banner-bg-room/banner-bg-room.less';
+
+@import '../../less/variables.less';     // только для удобства обращения к переменным
+
+
+.banner-bg-room {
+  background: url(../img/banner-bg-room-xs.jpg) center bottom no-repeat;
+  background-size: cover;
+  padding: 55px 0 61px;
+
+  &__inner {
+    .container();
+  }
+
+  &__title {
+    margin: 0;
+    font: 30px/1.4 @font-family--serif-cap;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 1px;
+
+    @media (min-width: @screen-md) {
+      font-size: 36px;
+    }
+  }
+
+  &__description {
+    .hidden-down(sm);
+    margin: 34px 0 0;
+    font: 18px/1.333333 @font-family--fira;
+    color: #fff;
+    text-align: center;
+
+    @media (min-width: @screen-md) {
+      margin-top: 27px;
+    }
+  }
+
+  @media (min-width: @screen-md) {
+    background-image: url(../img/banner-bg-room-md.jpg);
+    padding: 37px 0 39px;
+  }
+
+  @media (min-width: @screen-lg) {
+    background-image: url(../img/banner-bg-room-lg.jpg);
+  }
+
+
+  
+}

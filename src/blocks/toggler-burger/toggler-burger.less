@@ -1,0 +1,76 @@
+// Для импорта в диспетчер подключений: @import './src/blocks/toggler-burger/toggler-burger.less';
+
+@import '../../less/variables.less';     // только для удобства обращения к переменным
+
+
+.toggler-burger {
+  .hidden-up(lg);
+  position: absolute;
+  z-index: 1;
+  top: 32px;
+  right: 1px;
+  display: flex;
+  align-items: center;
+  width: 28px;
+  height: 24px;
+  user-select: none;
+  cursor: pointer;
+
+  &--open {
+    .toggler-burger__icon {
+      transition: background 0.2s;
+      background: transparent;
+      box-shadow: none;
+
+      &:before,
+      &:after {
+        transition: top 0.2s, transform 0.2s 0.2s;
+        top: 0;
+        box-shadow: none;
+      }
+
+      &:before {
+        transform: rotate3d(0, 0, 1, 45deg);
+      }
+
+      &:after {
+        transform: rotate3d(0, 0, 1, -45deg);
+      }
+    }
+  }
+
+  &__icon {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 4px;
+    background: @color-main--orange;
+    border-radius: 1px;
+    transition: background 0.2s 0.2s;
+    box-shadow: 0px 1px lighten(@color-main--orange, 20%);
+                //0px -1px lighten(@color-main--orange, 20%);
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: @color-main--orange;
+      border-radius: 1px;
+      transform-origin: 50% 50%;
+      transition: top 0.2s 0.2s, transform 0.2s;
+    }
+
+    &:before {
+      top: 9.5px;
+      box-shadow: 0px -1px lighten(@color-main--orange, 20%);
+    }
+
+    &:after {
+      top: -9.5px;
+      box-shadow: 0px 1px lighten(@color-main--orange, 20%);
+    }
+  }
+}

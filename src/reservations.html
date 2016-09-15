@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <title>Green Valley</title>
+  <meta name="description" content="">
+  @@include('_include/page_head.html')
+</head>
+
+<body>
+<header class="page-header">
+  <div class="page-header__inner">
+    <div class="page-header__items">
+      <a href="index.html" class="main-logo  page-header__main-logo"><img src="./img/logo.png" alt="Логотип"></a>
+      <nav class="main-nav  page-header__main-nav">
+        <div class="toggler-burger  main-nav__toggler"><span class="toggler-burger__icon"></span></div>
+        <ul class="main-nav__list">
+          <li class="main-nav__item  main-nav__item--active"><a href="room-list.html" class="main-nav__link">Номера</a></li>
+          <li class="main-nav__item"><a href="room-list.html" class="main-nav__link">Коттедж</a></li>
+          <li class="main-nav__item"><a href="room-list.html" class="main-nav__link">Ресторан</a></li>
+          <li class="main-nav__item"><a href="room-list.html" class="main-nav__link">Отдых</a></li>
+          <li class="main-nav__item"><a href="#page-footer" class="main-nav__link">Контакты</a></li>
+        </ul>
+      </nav>
+      <div class="page-header__contact">
+        <a href="tel:+78127775588" class="page-header__phone">+7 812 777 55 88</a>
+        г. Санкт - Петербург, Приморское ш.600
+      </div>
+      <div class="page-header__btn">
+        <a href="reservations.html" class="btn btn--icon btn--block">Забронировать</a>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="reservations">
+  <div class="reservations__inner">
+    <div class="reservations__header  reservations__header--hack">
+      <h1 class="reservations__title">Бронирование</h1>
+
+      <p class="reservations__text">Чтобы забронировать номер в отеле или коттедж,
+        заполните форму ниже или просто позвоните <br> по телефону:
+        <a href="tel:+78127775588" class="reservations__phone">+7 812 777-55-88</a>
+      </p>
+    </div>
+  </div>
+
+  <form action="" class="reservations__payment-form" id="reservations-form">
+    <div class="reservations__step  reservations__step--gray">
+      <div class="reservations__inner">
+        <h2 class="reservations__step-subtitle">Шаг 1</h2>
+
+        <h1 class="reservations__step-title">Дата отдыха</h1>
+
+        <div class="reservations__date-picker-list">
+          <div class="reservations__date-picker-items">
+            <div class="date-picker  reservations__date-picker" id="date-arrive">
+              <div class="date-picker__header">Дата въезда</div>
+
+              <div class="date-picker__date">
+                <label class="date-picker__tip" for="date-picker__arrive-day"> День </label>
+                <input type="text" class="date-picker__item" id="date-picker__arrive-day"
+                       id="date-picker__arrive-day" maxlength="2" size="2" placeholder="дд">
+
+                <label class="date-picker__tip" for="date-picker__arrive-month"> Месяц </label>
+                <input type="text" class="date-picker__item" id="date-picker__arrive-month"
+                       id="date-picker__arrive-month" maxlength="2" size="2" placeholder="мм">
+
+                <label class="date-picker__tip" for="date-picker__arrive-year"> Год </label>
+                <input type="text" class="date-picker__item  date-picker__item--big" id="date-picker__arrive-year"
+                       id="date-picker__arrive-year" maxlength="4" size="4" placeholder="гггг">
+              </div>
+            </div>
+
+            <div class="date-picker  reservations__date-picker" id="date-leave">
+              <div class="date-picker__header">Дата выезда</div>
+
+              <div class="date-picker__date">
+                <label class="date-picker__tip" for="date-picker__leave-day"> День </label>
+                <input type="text" class="date-picker__item" id="date-picker__leave-day" value=""
+                       id="date-picker__leave-day" maxlength="2" size="2" placeholder="дд">
+
+                <label class="date-picker__tip" for="date-picker__leave-month"> Месяц </label>
+                <input type="text" class="date-picker__item" id="date-picker__leave-month" value=""
+                       id="date-picker__leave-month" maxlength="2" size="2" placeholder="мм">
+
+                <label class="date-picker__tip" for="date-picker__leave-year"> Год </label>
+                <input type="text" class="date-picker__item  date-picker__item--big" id="date-picker__leave-year" value=""
+                       id="date-picker__leave-year" maxlength="4" size="4" placeholder="гггг">
+              </div>
+            </div>
+          </div> <!--reservations__date-picker-items-->
+        </div> <!--reservations__date-picker-list-->
+      </div> <!--reservations__inner-->
+    </div> <!--reservations__step-->
+    <div class="reservations__step">
+      <div class="reservations__inner">
+        <h2 class="reservations__step-subtitle">Шаг 2</h2>
+
+        <h1 class="reservations__step-title">Место проживания</h1>
+
+        <div class="reservations__place-picker-list">
+          <div class="reservations__place-picker-items" id="place-picker">
+            <label class="place-picker  reservations__place-picker" data-tabs="1">
+              <span class="place-picker__item-name">Отель</span>
+              <span class="place-picker__img">
+                <span class="sprite-png sprite-png--hotel"></span>
+              </span>
+              <input type="radio" class="place-picker__item" name="place-picker__item" value="hotel">
+              <span class="icon  icon--check  place-picker__icon"></span>
+            </label>
+
+            <label class="place-picker  place-picker--active  reservations__place-picker" data-tabs="2">
+              <span class="place-picker__item-name">Коттедж</span>
+              <span class="place-picker__img">
+                <span class="sprite-png sprite-png--cottage"></span>
+              </span>
+              <input type="radio" class="place-picker__item" name="place-picker__item" value="cottage" checked>
+              <span class="icon  icon--check  place-picker__icon"></span>
+            </label>
+          </div> <!--reservations__place-picker-items-->
+        </div> <!--reservations__place-picker-list-->
+      </div> <!--reservations__inner-->
+    </div> <!--reservations__step-->
+    <div class="reservations__step  reservations__step--gray" id="reservations__step-three">
+      <div class="reservations__inner">
+        <h2 class="reservations__step-subtitle">Шаг 3</h2>
+
+        <h1 class="reservations__step-title">Тип отеля</h1>
+
+        <div class="reservations__hotel-picker-wrapper">
+          <div class="reservations__hotel-picker-list">
+            <div class="reservations__hotel-picker-items" id="hotel-picker">
+              <label class="hotel-picker  hotel-picker--active" data-tabs="1">
+                <span class="hotel-picker__name">Флагман</span>
+                <input type="radio" class="hotel-picker__item" name="cottage-picker__item" value="1" checked>
+                <span class="icon  icon--check  hotel-picker__icon"></span>
+              </label>
+              <label class="hotel-picker" data-tabs="2">
+                <span class="hotel-picker__name">Озерный</span>
+                <input type="radio" class="hotel-picker__item" name="cottage-picker__item" value="2">
+                <span class="icon  icon--check  hotel-picker__icon"></span>
+              </label>
+              <label class="hotel-picker" data-tabs="3">
+                <span class="hotel-picker__name">Портовый</span>
+                <input type="radio" class="hotel-picker__item" name="cottage-picker__item" value="3">
+                <span class="icon  icon--check  hotel-picker__icon"></span>
+              </label>
+              <label class="hotel-picker  hotel-picker--last" data-tabs="4">
+                <span class="hotel-picker__name">Ольховка</span>
+                <input type="radio" class="hotel-picker__item" name="cottage-picker__item" value="4">
+                <span class="icon  icon--check  hotel-picker__icon"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="reservations__hotel-description-wrapper">
+          <div class="reservations__hotel-description-list" id="hotel-description">
+            <ul class="hotel-description">
+              <li class="hotel-description__item">
+                <div class="sprite-png  sprite-png--rule  hotel-description__icon"></div>
+                <span>Площадь 100M<sup>2</sup></span>
+              </li>
+              <li class="hotel-description__item">
+                <div class="sprite-png  sprite-png--door  hotel-description__icon"></div>
+                3 комнаты
+              </li>
+              <li class="hotel-description__item">
+                <div class="sprite-png  sprite-png--bed  hotel-description__icon"></div>
+                5 спальных мест
+              </li>
+              <li class="hotel-description__item">
+                <div class="sprite-png  sprite-png--bath  hotel-description__icon"></div>
+                Раздельный санузел
+              </li>
+              <li class="hotel-description__item">
+                <div class="sprite-png  sprite-png--wifi  hotel-description__icon"></div>
+                WI-FI
+              </li>
+            </ul>
+            <ul class="hotel-description">
+              <li class="hotel-description__item">
+                <div class="sprite-png  sprite-png--rule  hotel-description__icon"></div>
+                <span>Площадь 100M<sup>2</sup></span>
+              </li>
+              <li class="hotel-description__item">
+                <div class="sprite-png  sprite-png--door  hotel-description__icon"></div>
+                3 комнаты
+              </li>
+              <li class="hotel-description__item">
+                <div class="sprite-png  sprite-png--bed  hotel-description__icon"></div>
+                5 спальных мест
+              </li>
+              <li class="hotel-description__item">
+                <div class="sprite-png  sprite-png--bath  hotel-description__icon"></div>
+                Раздельный санузел
+              </li>
+              <li class="hotel-description__item">
+                <div class="sprite-png  sprite-png--wifi  hotel-description__icon"></div>
+                WI-FI
+              </li>
+            </ul>
+            <ul class="hotel-description">
+              <li class="hotel-description__item">
+                <div class="sprite-png  sprite-png--rule  hotel-description__icon"></div>
+                <span>Площадь 100M<sup>2</sup></span>
+              </li>
+              <li class="hotel-description__item">
+                <div class="sprite-png  sprite-png--door  hotel-description__icon"></div>
+                3 комнаты
+              </li>
+              <li class="hotel-description__item">
+                <div class="sprite-png  sprite-png--bed  hotel-description__icon"></div>
+                5 спальных мест
+              </li>
+              <li class="hotel-description__item">
+                <div class="sprite-png  sprite-png--bath  hotel-description__icon"></div>
+                Раздельный санузел
+              </li>
+              <li class="hotel-description__item">
+                <div class="sprite-png  sprite-png--wifi  hotel-description__icon"></div>
+                WI-FI
+              </li>
+            </ul>
+            <ul class="hotel-description">
+              <li class="hotel-description__item">
+                <div class="sprite-png  sprite-png--rule  hotel-description__icon"></div>
+                <span>Площадь 100M<sup>2</sup></span>
+              </li>
+              <li class="hotel-description__item">
+                <div class="sprite-png  sprite-png--door  hotel-description__icon"></div>
+                3 комнаты
+              </li>
+              <li class="hotel-description__item">
+                <div class="sprite-png  sprite-png--bed  hotel-description__icon"></div>
+                5 спальных мест
+              </li>
+              <li class="hotel-description__item">
+                <div class="sprite-png  sprite-png--bath  hotel-description__icon"></div>
+                Раздельный санузел
+              </li>
+              <li class="hotel-description__item">
+                <div class="sprite-png  sprite-png--wifi  hotel-description__icon"></div>
+                WI-FI
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div> <!--reservations__inner-->
+      <div class="reservations__inner">
+        <h2 class="reservations__step-subtitle">Шаг 3</h2>
+
+        <h1 class="reservations__step-title">Тип коттеджа</h1>
+
+        <div class="reservations__hotel-picker-wrapper">
+          <div class="reservations__hotel-picker-list">
+            <div class="reservations__hotel-picker-items" id="cottage-picker">
+              <label class="hotel-picker  hotel-picker--active" data-tabs="1">
+                <span class="hotel-picker__name">Флагман</span>
+                <input type="radio" class="hotel-picker__item" name="hotel-picker__item" value="1" checked>
+                <span class="icon  icon--check  hotel-picker__icon"></span>
+              </label>
+              <label class="hotel-picker" data-tabs="2">
+                <span class="hotel-picker__name">Озерный</span>
+                <input type="radio" class="hotel-picker__item" name="hotel-picker__item" value="2">
+                <span class="icon  icon--check  hotel-picker__icon"></span>
+              </label>
+              <label class="hotel-picker" data-tabs="3">
+                <span class="hotel-picker__name">Портовый</span>
+                <input type="radio" class="hotel-picker__item" name="hotel-picker__item" value="3">
+                <span class="icon  icon--check  hotel-picker__icon"></span>
+              </label>
+              <label class="hotel-picker  hotel-picker--last" data-tabs="4">
+                <span class="hotel-picker__name">Ольховка</span>
+                <input type="radio" class="hotel-picker__item" name="hotel-picker__item" value="4">
+                <span class="icon  icon--check  hotel-picker__icon"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="reservations__hotel-description-wrapper">
+          <div class="reservations__hotel-description-list" id="cottage-description">
+            <ul class="hotel-description">
+              <li class="hotel-description__item">
+                <div class="sprite-png  sprite-png--rule  hotel-description__icon"></div>
+                <span>Площадь 100M<sup>2</sup></span>
+              </li>
+              <li class="hotel-description__item">
+                <div class="sprite-png  sprite-png--door  hotel-description__icon"></div>
+                3 комнаты
+              </li>
+              <li class="hotel-description__item">
+                <div class="sprite-png  sprite-png--bed  hotel-description__icon"></div>
+                5 спальных мест
+              </li>
+              <li class="hotel-description__item">
+                <div class="sprite-png  sprite-png--bath  hotel-description__icon"></div>
+                Раздельный санузел
+              </li>
+              <li class="hotel-description__item">
+                <div class="sprite-png  sprite-png--wifi  hotel-description__icon"></div>
+                WI-FI
+              </li>
+            </ul>
+            <ul class="hotel-description">
+              <li class="hotel-description__item">
+                <div class="sprite-png  sprite-png--rule  hotel-description__icon"></div>
+                <span>Площадь 100M<sup>2</sup></span>
+              </li>
+              <li class="hotel-description__item">
+                <div class="sprite-png  sprite-png--door  hotel-description__icon"></div>
+                3 комнаты
+              </li>
+              <li class="hotel-description__item">
+                <div class="sprite-png  sprite-png--bed  hotel-description__icon"></div>
+                5 спальных мест
+              </li>
+              <li class="hotel-description__item">
+                <div class="sprite-png  sprite-png--bath  hotel-description__icon"></div>
+                Раздельный санузел
+              </li>
+              <li class="hotel-description__item">
+                <div class="sprite-png  sprite-png--wifi  hotel-description__icon"></div>
+                WI-FI
+              </li>
+            </ul>
+            <ul class="hotel-description">
+              <li class="hotel-description__item">
+                <div class="sprite-png  sprite-png--rule  hotel-description__icon"></div>
+                <span>Площадь 100M<sup>2</sup></span>
+              </li>
+              <li class="hotel-description__item">
+                <div class="sprite-png  sprite-png--door  hotel-description__icon"></div>
+                3 комнаты
+              </li>
+              <li class="hotel-description__item">
+                <div class="sprite-png  sprite-png--bed  hotel-description__icon"></div>
+                5 спальных мест
+              </li>
+              <li class="hotel-description__item">
+                <div class="sprite-png  sprite-png--bath  hotel-description__icon"></div>
+                Раздельный санузел
+              </li>
+              <li class="hotel-description__item">
+                <div class="sprite-png  sprite-png--wifi  hotel-description__icon"></div>
+                WI-FI
+              </li>
+            </ul>
+            <ul class="hotel-description">
+              <li class="hotel-description__item">
+                <div class="sprite-png  sprite-png--rule  hotel-description__icon"></div>
+                <span>Площадь 100M<sup>2</sup></span>
+              </li>
+              <li class="hotel-description__item">
+                <div class="sprite-png  sprite-png--door  hotel-description__icon"></div>
+                3 комнаты
+              </li>
+              <li class="hotel-description__item">
+                <div class="sprite-png  sprite-png--bed  hotel-description__icon"></div>
+                5 спальных мест
+              </li>
+              <li class="hotel-description__item">
+                <div class="sprite-png  sprite-png--bath  hotel-description__icon"></div>
+                Раздельный санузел
+              </li>
+              <li class="hotel-description__item">
+                <div class="sprite-png  sprite-png--wifi  hotel-description__icon"></div>
+                WI-FI
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div> <!--reservations__inner-->
+
+    </div> <!--reservations__step-->
+    <div class="reservations__step">
+      <div class="reservations__inner">
+        <h2 class="reservations__step-subtitle">Шаг 4</h2>
+
+        <h1 class="reservations__step-title">Персональная информация</h1>
+
+        <div class="reservations__personal-info-wrapper">
+          <div class="reservations__personal-info-list">
+            <div class="personal-info">
+              <label class="personal-info__item">
+                <span class="icon  icon--check  personal-info__icon"></span>
+                <span class="icon  icon--close  personal-info__icon  personal-info__icon--cancel"></span>
+                <input type="text" class="personal-info__form" id="personal-info__name"
+                       placeholder="Имя">
+              </label>
+              <label class="personal-info__item">
+                <span class="icon  icon--check  personal-info__icon"></span>
+                <span class="icon  icon--close  personal-info__icon  personal-info__icon--cancel"></span>
+                <input type="text" class="personal-info__form" id="personal-info__lastname"
+                       placeholder="Фамилия">
+              </label>
+              <label class="personal-info__item">
+                <span class="icon  icon--check  personal-info__icon"></span>
+                <span class="icon  icon--close  personal-info__icon  personal-info__icon--cancel"></span>
+                <input type="tel" class="personal-info__form" id="personal-info__phone"
+                       placeholder="Номер телефона">
+
+                <div class="personal-info__hint">Мы свяжемся с вами в случае необходимости.</div>
+              </label>
+              <label class="personal-info__item  personal-info__item--last">
+                <span class="icon  icon--check  personal-info__icon"></span>
+                <span class="icon  icon--close  personal-info__icon  personal-info__icon--cancel"></span>
+                <input type="email" class="personal-info__form" id="personal-info__email"
+                       placeholder="E-mail">
+
+                <div class="personal-info__hint">На этот адрес мы вышлем вам подтверждение о
+                  забронированном номере.
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div> <!--reservations__inner-->
+    </div> <!--reservations__step-->
+    <div class="reservations__step  reservations__step--gray">
+      <div class="reservations__inner">
+        <h2 class="reservations__step-subtitle">Шаг 5</h2>
+
+        <h1 class="reservations__step-title">Способ оплаты</h1>
+
+        <div class="reservations__payment-list">
+          <div class="reservations__payment-list-item" id="payment">
+            <label class="payment  reservations__payment-item">
+              <span class="icon  icon--check  payment__tab"></span>
+              <input type="radio" class="payment__radio" name="payment__item" value="">
+              <span class="payment__wrapper">
+                <span class="payment__name">По приезду</span>
+                <span class="payment__hint">Вы можете произвести оплату по факту заселения.</span>
+              </span>
+            </label>
+
+            <label class="payment  reservations__payment-item  reservations__payment-item--last">
+              <span class="icon  icon--check  payment__tab  payment__tab--active"></span>
+              <input type="radio" class="payment__radio" name="payment__item" value="" id="payment-now" checked>
+              <span class="payment__wrapper">
+                <span class="payment__name">Сейчас</span>
+                <span class="payment__hint">Прямо сейчас вы можете произвести оплату с помощью банковской карты.</span>
+              </span>
+
+              <span class="payment__wrapper">
+                <span class="payment__bank-card-wrapper">
+                  <label class="payment__bank-card">
+                    <span class="payment__description">Номер карты</span>
+                    <span class="icon  icon--check  payment__icon"></span>
+                    <span class="icon  icon--close  payment__icon  payment__icon--cancel"></span>
+                    <input type="text" class="payment__form" id="payment__number"
+                           placeholder="0000-0000-0000-0000">
+                  </label>
+
+                  <label class="payment__bank-card">
+                    <span class="payment__description">Фамилия владельца карты</span>
+                    <span class="icon  icon--check  payment__icon"></span>
+                    <span class="icon  icon--close  payment__icon  payment__icon--cancel"></span>
+                    <input type="text" class="payment__form" id="payment__owner"
+                           placeholder="Vladimir Vladimirov">
+                  </label>
+                </span>
+
+                <span class="payment__bank-card-wrapper  payment__bank-card-wrapper--small">
+                  <label class="payment__bank-card">
+                    <span class="payment__description">Код CvV</span>
+                    <span class="icon  icon--check  payment__icon"></span>
+                    <span class="icon  icon--close  payment__icon  payment__icon--cancel"></span>
+                    <input type="text" class="payment__form  payment__form--small" id="payment__cvv"
+                           placeholder="123">
+                  </label>
+
+                  <label class="payment__bank-card">
+                    <span class="payment__description">действует до</span>
+                    <span class="icon  icon--check  payment__icon"></span>
+                    <span class="icon  icon--close  payment__icon  payment__icon--cancel"></span>
+                    <input type="text" class="payment__form  payment__form--small" id="payment__valid"
+                           placeholder="01 / 2018">
+                  </label>
+                </span>
+              </span>
+            </label>
+          </div>
+
+          <div class="reservations__result-list-item">
+            <div class="result  reservations__result" id="result">
+              <h1 class="result__title">К оплате</h1>
+
+              <p class="result__price">-</p>
+
+              <p class="result__help animated" >
+                <span class="icon  icon--exclamation-circle  result__icon"></span>
+                Пожалуйста,
+                <a href="" class="result__link">выберите дату,</a> чтобы увидеть сумму к оплате
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="reservations__btn-wrapper">
+          <div class="reservations__btn">
+            <button class="btn  btn--green" type="submit" id="btn">Забронировать</button>
+          </div>
+        </div>
+
+
+      </div> <!--reservations__inner-->
+    </div> <!--reservations__step-->
+
+  </form> <!--reservations__payment-form-->
+</div>
+
+
+<footer class="page-footer" id="page-footer">
+  <div class="page-footer__inner">
+    <div class="page-footer__items">
+      <div class="page-footer__address">г. Санкт-Петербург <br> Приморское ш.600</div>
+      <div class="page-footer__link">
+        <a href="#" class="main-logo"><img src="./img/logo.png" alt="Логотип"></a>
+        <ul class="page-footer__list">
+          <li><a href="#" class="page-footer__icon icon icon--vk"></a></li>
+          <li><a href="#" class="page-footer__icon icon icon--instagram"></a></li>
+          <li><a href="#" class="page-footer__icon icon icon--facebook"></a></li>
+        </ul>
+      </div>
+      <div class="page-footer__contact">
+        <a href="tel:+78127775588" class="page-footer__phone">+7 812 777 55 88</a>
+        <a href="mailto:info@greenvalley.ru" class="page-footer__mail">info@greenvalley.ru</a>
+      </div>
+    </div>
+  </div>
+</footer>
+@@include('_include/page_bottom.html')
+</body>
+</html>

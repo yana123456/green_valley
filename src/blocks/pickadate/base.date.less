@@ -1,0 +1,211 @@
+
+/* ==========================================================================
+   $BASE-DATE-PICKER
+   ========================================================================== */
+
+@import "_variables.less";
+
+
+/**
+ * The picker box.
+ */
+.picker__box {
+    padding: 0;
+}
+
+
+/**
+ * The header containing the month and year stuff.
+ */
+.picker__header {
+    text-align: center;
+    position: relative;
+    padding: 20px 0;
+    font: 500 14px/1 @font-family--fira;
+    background-color: @color-main--orange;
+    color: #fff;
+    text-transform: uppercase;
+    border: 1px solid #ffba9a;
+}
+
+
+/**
+ * The month and year labels.
+ */
+.picker__month,
+.picker__year {
+    display: inline-block;
+    margin-left: .25em;
+    margin-right: .25em;
+}
+.picker__year {
+    display: none;
+}
+
+
+/**
+ * The month navigation buttons.
+ */
+.picker__nav--prev,
+.picker__nav--next {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 54px;
+    height: 54px;
+    top: 0;
+    .icon();
+    font-size: 30px;
+}
+.picker__nav--prev {
+    left: 0;
+    border-right: 1px solid #ffba9a;
+}
+.picker__nav--next {
+    right: 0;
+    border-left: 1px solid #ffba9a;
+}
+.picker__nav--prev:before,
+.picker__nav--next:before {
+    display: block;
+}
+
+.picker__nav--prev:before {
+    content: "\f104";
+}
+
+.picker__nav--next:before {
+    content: "\f105";
+}
+
+// Hovered date picker items.
+.picker__nav--prev:hover,
+.picker__nav--next:hover {
+    cursor: pointer;
+    background-color: @color-main--orange--hover;
+}
+
+// Disabled month nav.
+.picker__nav--disabled,
+.picker__nav--disabled:hover,
+.picker__nav--disabled:before,
+.picker__nav--disabled:before:hover {
+    cursor: default;
+    background: none;
+    border-right-color: @disabled-things-bg;
+    border-left-color: @disabled-things-bg;
+}
+
+
+
+
+/**
+ * The calendar table of dates
+ */
+.picker__table {
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: center;
+    border-collapse: collapse;
+    border-spacing: 0;
+    table-layout: fixed;
+    font-size: inherit;
+    width: 100%;
+}
+
+// Remove browser stylings on a table cell.
+.picker__table td {
+    margin: 0;
+    padding: 0;
+}
+
+.picker__table thead {
+    border-left: 1px solid #ffba9a;
+    border-right: 1px solid #ffba9a;
+}
+
+
+/**
+ * The weekday labels
+ */
+.picker__weekday {
+    padding: 12px 0;
+    width: 14.285714286%; // 100/7
+    font: 17px/1 @font-family--fira;
+    background-color: @color-main--orange;
+    color: #fff;
+}
+
+
+/**
+ * The days on the calendar
+ */
+.picker__day {
+    padding: 6px 0;
+    font: 20px/1 @font-family--fira;
+    border: 1px solid transparent;
+}
+
+// Today.
+.picker__day--today {
+    position: relative;
+}
+
+// Disabled day.
+.picker__day--disabled:before {
+    border-top-color: @disabled-tag;
+}
+
+// Out of focus days.
+.picker__day--outfocus {
+    color: @disabled-things-text;
+}
+
+// Hovered date picker items.
+.picker__day--infocus:hover,
+.picker__day--outfocus:hover {
+    .picker-item-hovered;
+}
+
+// Highlighted and hovered/focused dates.
+.picker__day--highlighted {
+    .picker-item-highlighted;
+}
+.picker__day--highlighted:hover,
+.picker--focused .picker__day--highlighted {
+    .picker-item-hovered;
+}
+
+// Selected and hovered/focused dates.
+.picker__day--selected,
+.picker__day--selected:hover,
+.picker--focused .picker__day--selected {
+    .picker-item-selected;
+}
+
+// Disabled dates.
+.picker__day--disabled,
+.picker__day--disabled:hover,
+.picker--focused .picker__day--disabled {
+    .picker-item-disabled;
+}
+
+// Disabled and highlighted dates.
+.picker__day--infocus.picker__day--disabled,
+.picker__day--highlighted.picker__day--disabled,
+.picker__day--highlighted.picker__day--disabled:hover {
+    background-color: #fff;
+}
+
+
+/**
+ * The footer containing the "today", "clear", and "close" buttons.
+ */
+.picker__footer {
+    text-align: center;
+}
+
+
+
+

@@ -1,0 +1,137 @@
+// Для импорта в диспетчер подключений: @import './src/blocks/btn/btn.less';
+
+@import '../../less/variables.less';     // только для удобства обращения к переменным
+
+
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 11px 25px 8px;
+  white-space: nowrap;
+  cursor: pointer;
+  vertical-align: middle;
+  user-select: none;
+  text-align: center;
+  font: 500 14px/1 @font-family--fira;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: 2px solid transparent;
+  border-radius: 22px;
+  color: #fff;
+  letter-spacing: 0.8px;
+  background-color: @color-main--orange;
+  background-image: none;
+  transition: all ease 0.4s;
+
+  &--hover,
+  &:hover {
+    text-decoration: none;
+    color: #fff;
+    background-color: @color-main--orange--hover;
+  }
+
+  &--active,
+  &:active,
+  &:focus {
+    text-decoration: none;
+    outline: 0;
+    box-shadow: none;
+    color: #fff;
+    background-color: @color-main--orange--hover;
+  }
+
+  &--disabled,
+  &:disabled {
+    cursor: not-allowed;
+    opacity: @opacity;
+    color: @text-color;
+    background-color: @gray-lighter;
+    border-color: @gray-light;
+
+    a& {
+      pointer-events: none;
+    }
+  }
+  
+  &--white {
+    border: 2px solid #fff;
+    background-color: transparent;
+
+    &--hover,
+    &:hover {
+      background-color: #fff;
+      color: @color-main--green;
+    }
+
+    &--active,
+    &:active,
+    &:focus {
+      background-color: #fff;
+      color: @color-main--green;
+    }
+  }
+
+  &--green {
+    padding: 20px 30px;
+    border-radius: 0;
+    background-color: @color-main--green;
+
+    &--hover,
+    &:hover {
+      background-color: @color-main--green-hover;
+    }
+
+    &--active,
+    &:active,
+    &:focus {
+      background-color: @color-main--green-hover;
+    }
+  }
+
+  &--icon {
+    padding-left: 20px;
+    padding-right: 20px;
+
+    &:before {
+      .icon();
+      margin-top: -2px;
+      padding-right: 9px;
+      content: "\f133";
+    }
+  }
+
+  &--link {
+    padding: 0;
+    background-color: transparent;
+    color: @gray-darker;
+    border-radius: 0;
+    border-bottom: 1px dashed @gray-darker;
+
+    &--hover,
+    &:hover {
+      background-color: inherit;
+      color: inherit;
+      border-bottom: none;
+    }
+
+    &--active,
+    &:active,
+    &:focus {
+      background-color: inherit;
+      color: inherit;
+    }
+  }
+
+  &--block {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+
+    & + & {
+      margin-top: (@line-height / 2);
+    }
+  }
+}

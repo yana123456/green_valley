@@ -1,0 +1,33 @@
+// Для импорта в диспетчер подключений: @import './src/blocks/room-register/room-register.less';
+
+@import '../../less/variables.less';     // только для удобства обращения к переменным
+
+
+.room-register {
+
+  &__inner {
+    .container(0);
+
+    @media (min-width: @screen-md) {
+      width: @container-sm;
+      padding-left: @grid-gutter-width;
+      padding-right: @grid-gutter-width;
+    }
+  }
+
+  &__title {
+    margin: 39px 0 34px;
+    font: 30px @font-family--serif-cap;
+    color: #000;
+    text-align: center;
+    letter-spacing: 2px;
+  }
+
+  &__room {
+    margin-bottom: 50px;
+
+    @media (min-width: @screen-lg) {
+      margin-bottom: 40px;
+    }
+  }
+}

@@ -1,0 +1,77 @@
+// Для импорта в диспетчер подключений: @import './src/blocks/room-inform/room-inform.less';
+
+@import '../../less/variables.less';     // только для удобства обращения к переменным
+
+
+.room-inform {
+
+  &__inner {
+    .container(0);
+    padding: 48px 0 29px;
+
+    @media (min-width: @screen-md) {
+      padding: 48px 0 73px;
+    }
+
+    @media (min-width: @screen-xl) {
+      padding-bottom: 48px;
+    }
+  }
+
+  &__row {
+    .row(0, 0, 0);
+  }
+
+  &__title {
+    margin: 0 0 30px;
+    font: 30px/1 @font-family--serif-cap;
+    color: #000;
+    text-align: center;
+
+    @media (min-width: @screen-md) {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__subtitle {
+    margin-top: 18px;
+    font: 500 14px/1 @font-family--fira;
+    color: @gray-darker;
+    text-align: center;
+  }
+
+  &__price {
+    font-size: 18px;
+    font-weight: 400;
+    color: @color-main--orange;
+  }
+
+  &__room-description {
+    .col(lg, 6);
+    padding-left: 20px;
+    padding-right: 20px;
+
+    @media (min-width: @screen-md) {
+      width: 77.4739583%;
+    }
+
+  }
+
+  &__room-slider {
+    .col(lg, 6);
+
+    @media (min-width: @screen-lg) {
+      order: 1;
+    }
+  }
+
+  &__btn {
+    margin: 35px 0 20px;
+    text-align: center;
+
+    @media (min-width: @screen-xl) {
+      margin: 89px 0 0;
+    }
+  }
+  
+}

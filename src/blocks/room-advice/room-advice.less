@@ -1,0 +1,33 @@
+// Для импорта в диспетчер подключений: @import './src/blocks/room-advice/room-advice.less';
+
+@import '../../less/variables.less';     // только для удобства обращения к переменным
+
+
+.room-advice {
+  background-color: #f6f6f6;
+
+  &__inner {
+    .container();
+    padding-top: 30px;
+    padding-bottom: 33px;
+
+    @media (min-width: @screen-md) {
+      padding-bottom: 20px;
+    }
+
+    @media (min-width: @screen-lg) {
+      padding-bottom: 50px;
+    }
+  }
+
+  &__wrapper {
+    .row(0, 0, 0);
+  }
+
+  &__place {
+    margin-top: 20px;
+    .col(lg, 4);
+  }
+
+  
+}
